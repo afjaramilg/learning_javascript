@@ -27,4 +27,3 @@ i found the chapter to be lacking in terms of private fields and static properti
 3. `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map`
 4. `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#instance_properties`
 5. `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static`
-6. `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields`

@@ -24,7 +24,7 @@ it appears the 'traditional' way of having javascript code split into several fi
 
 in a way, this is not so different from the way C does it, but it almost seems to enforce the condition that code in other files cant be code that runs, and rather just utilities (at least to guarantee that its always error free). this is similar to how in most compiled programming languages you're only allowed one `main()` function. 
 
-on the other hand, unlike C, i dont think javascript has a linker, nor does it allow things to just be declared. with C, as long as you write self-contained headers that dont require other headers to compile, all you have to care about is having all your `.o's`
+on the other hand, unlike C, javascript doesnt have header guard macros or a linker. plus, as mentioned in the book, you'd still want to use a bundler and minifier for performance reasons in most cases.
 
 
 ### global scopes: nodejs and javascript

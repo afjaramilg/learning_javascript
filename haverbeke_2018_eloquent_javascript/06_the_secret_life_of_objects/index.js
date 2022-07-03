@@ -2,11 +2,15 @@
 
 // 1 ==========================================================================
 // as an experiment, i also tried to make it so the function could change its
-// own function object within itself by using `call()`.
+// own function object within itself by using `call()`. it works, even in
+// firefox. this is sort of cheating, because the context for this is provided
+// by call.
 let f0 = function() { 
     this.someProp = 'hello';
 }
 
+
+f0(); 
 f0.call(f0);
 f0.someProp === 'hello';
 
