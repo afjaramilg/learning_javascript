@@ -1,10 +1,3 @@
-//import "./miscTests" as misc;
-
-"use strict";
-
-//misc.thisExperiment1();
-
-
 "use strict";
 
 function work(a, b, c) {
@@ -63,4 +56,3 @@ for (let j = 0; j < 4; j++) {
     }
     console.timeEnd('bind-ing (with params)');
 }
-
