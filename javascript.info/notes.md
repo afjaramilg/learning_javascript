@@ -37,8 +37,11 @@ const boundFn1 = (...restArgs) => fn.call(thisArg, arg1, arg2, ...restArgs).
 ```
  other applications include creating functions with pre-set initial arguments, by making the `thisArg` argument `null` or `undefined` (for now i see no difference, however see `[8]`) and adding some parameters. since all functions in javascript have an `arguments` object, the resulting function can still be called with additional arbitrary parameters.
 
+a specific usage mentioned by `[12]` is to provide a callback function with a set this in contexts where the `this` value can be unexpected, such as in `timeOut()`, whose `this` is not inherited from the environment. 
+
 `fn.call(thisArg, arg1, ..., argN)` **and** `fn.apply(thisArg, argsArray)`
 by `[9]` and `[10]`'s own admission, these two functions are almost the same, only that one takes a list of parameters and the other takes the parameters directly.
+
 
 **the performance comparison**
 as per `[11]` it seems (and i confirmed) that `call()` is faster than `apply()`. i also compared it to `bind()` being called different ways and found that, in my tests, `call()` and `bind()` were pretty close with regards to their speed for small speeds. the advantage of `bind()` only becomes apparent as the iteration count becomes rather large, and even then the javascript engine applied some sort of optimization after a certain point that put them head-to-head once more. 
@@ -130,7 +133,6 @@ i think its worth mentioning that `.reduce((accum, item, index, arr) => {}, init
 
 the `thisArg` pattern in interesting. it is an optional parameter that many array functions have in order to pass 
 
-
 ### bibliography
 1. [mdn's article on memory](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
 2. [more info on roots](https://developer.chrome.com/docs/devtools/memory-problems/memory-101/#retained_size)
@@ -143,3 +145,4 @@ the `thisArg` pattern in interesting. it is an optional parameter that many arra
 9. [`call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 10. [`apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 11. [performance of `call()` vs `apply()`](https://stackoverflow.com/questions/33054907/javascript-performance-call-vs-apply)
+12. [the `timeout()` `this` problem](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#the_this_problem)
